@@ -453,7 +453,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "swashbuckle.aspnetcore >= 10.3.1"
+      "Swashbuckle.AspNetCore >= 10.3.1"
     ]
   },
   "packageFolders": {
@@ -462,11 +462,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Unigran\\Desktop\\POO\\Sistema-gerenciamento-biblioteca-universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
       "projectName": "MinhaBiblioteca",
-      "projectPath": "C:\\Users\\Unigran\\Desktop\\POO\\Sistema-gerenciamento-biblioteca-universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+      "projectPath": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
       "packagesPath": "C:\\Users\\Unigran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Unigran\\Desktop\\POO\\Sistema-gerenciamento-biblioteca-universitaria\\MinhaBiblioteca\\obj\\",
+      "outputPath": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Unigran\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -499,7 +499,7 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "swashbuckle.aspnetcore": {
+          "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[10.3.1, )"
           }
