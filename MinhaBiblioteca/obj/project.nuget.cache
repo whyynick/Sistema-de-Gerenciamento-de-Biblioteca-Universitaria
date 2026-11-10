@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TfU2uc3prMo=",
+  "dgSpecHash": "Iub+/bRdjPM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+  "projectFilePath": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Unigran\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
     "C:\\Users\\Unigran\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",

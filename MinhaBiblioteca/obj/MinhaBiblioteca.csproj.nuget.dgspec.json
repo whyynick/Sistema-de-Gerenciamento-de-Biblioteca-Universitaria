@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj": {}
+    "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj": {
+    "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
         "projectName": "MinhaBiblioteca",
-        "projectPath": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+        "projectPath": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
         "packagesPath": "C:\\Users\\Unigran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Unigran\\Downloads\\programação orientada\\Trabalho\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\obj\\",
+        "outputPath": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Unigran\\AppData\\Roaming\\NuGet\\NuGet.Config"
