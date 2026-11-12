@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.services.AddSingleton<ImaterialRepository, MaterialRepository>();
+builder.Services.AddSingleton<IMaterialRepository, MaterialRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "Microsoft.Extensions.ApiDescription.Server/10.0.0": {
@@ -457,19 +457,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Unigran\\.nuget\\packages\\": {}
+    "C:\\Users\\Yuri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\Yuri\\Documents\\GitHub\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
       "projectName": "MinhaBiblioteca",
-      "projectPath": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
-      "packagesPath": "C:\\Users\\Unigran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Unigran\\Documents\\yuri\\POO\\Atividade 02\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\obj\\",
+      "projectPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+      "packagesPath": "C:\\Users\\Yuri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Unigran\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Yuri\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -479,6 +479,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -493,10 +494,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Swashbuckle.AspNetCore": {
@@ -523,7 +525,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
