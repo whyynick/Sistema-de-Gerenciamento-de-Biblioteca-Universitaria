@@ -11,6 +11,13 @@ public class MateriaisController : ControllerBase
         _repository = repository;
     }
 
+[HttpGet]
+public IActionResult ListarTodos()
+{
+    var materiais = _repository.ObterTodos();
+    return Ok(materiais);
+}
+
 [HttpGet("{id}")]
 public IActionResult BuscarMaterial(int id)
 {
@@ -30,7 +37,12 @@ public IActionResult MostrarDescricao(int id)
     if (material == null)
         return NotFound();
     
-    return Ok(material.Descricao());
+    return Ok(new {
+        id = material.Id,
+        tipo = material.GetType().Name,
+        descricao = material.Descricao(),
+        PrazoEmprestimo = material.CalcularPrazo()
+    });
 }
 
 
