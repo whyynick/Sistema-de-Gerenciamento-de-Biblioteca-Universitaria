@@ -44,22 +44,78 @@ public IActionResult MostrarDescricao(int id)
         PrazoEmprestimo = material.CalcularPrazo()
     });
 }
-[HttpPost("livro")]
+
+[HttpPost("Livro")]
 public IActionResult CriarLivro([FromBody] Livro livro)
 {
-    var criado = _repository.Adicionar(livro);
+    if (livro == null)
+    {
+        return BadRequest("Dados do livro não informados.");
+    }
 
-    return CreatedAtAction(nameof(BuscarMaterial),new{id = criado.Id}, criado);
+    if (string.IsNullOrWhiteSpace(livro.Titulo))
+    {
+        return BadRequest("O título do material é obrigatório e não pode conter somente espaços.");
+    }
+
+    if (livro.AnoPublicacao < 0)
+    {
+        return BadRequest("O ano de publicação não pode ser menor que 0.");
+    }
+
+    if (string.IsNullOrWhiteSpace(livro.Autor))
+    {
+        return BadRequest("O autor do livro é obrigatório.");
+    }
+
+    if (livro.Paginas <= 0)
+    {
+        return BadRequest("O número de páginas deve ser maior que 0.");
+    }
+
+    var livroCriado = _repository.Adicionar(livro);
+
+    return Created($"/api/Materiais/{livroCriado.Id}", livroCriado);
+  
 }
 
 [HttpPut("livro/{id}")]
 public IActionResult AtualizarLivro(int id, [FromBody] Livro livro)
 {
-    bool atualizado = _repository.Atualizar(id, livro);
+if (livro == null)
+    {
+        return BadRequest("Dados do livro não informados.");
+    }
 
-    if(!atualizado)
-        return  NotFound();
-    
+    if (string.IsNullOrWhiteSpace(livro.Titulo))
+    {
+        return BadRequest("O título do material é obrigatório e não pode conter somente espaços.");
+    }
+
+    if (livro.AnoPublicacao < 0)
+    {
+        return BadRequest("O ano de publicação não pode ser menor que 0.");
+    }
+
+    if (string.IsNullOrWhiteSpace(livro.Autor))
+    {
+        return BadRequest("O autor do livro é obrigatório.");
+    }
+
+    if (livro.Paginas <= 0)
+    {
+        return BadRequest("O número de páginas deve ser maior que 0.");
+    }
+
+    livro.Id = id;
+
+    var atualizado = _repository.Atualizar(id, livro);
+
+    if (!atualizado)
+    {
+        return NotFound("Material não encontrado.");
+    }
+
     return Ok(livro);
 }
 
