@@ -1,0 +1,30 @@
+body {
+    background-color: antiquewhite;
+}
+
+#title {
+    background-color: whitesmoke;
+    border-bottom: solid 2px;
+}
+
+#new-btns {
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.button {
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 20rem;
+    border: 1px solid black;
+}
+
+#acervo {
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+footer {
+    border-top: 1px solid black;
+    margin-bottom: 0;
+}

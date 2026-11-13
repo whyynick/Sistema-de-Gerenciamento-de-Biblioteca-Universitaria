@@ -1,6 +1,24 @@
 public class MaterialRepository : IMaterialRepository
 {    
-    private static Dictionary<int, MaterialBiblioteca>_materiais = new();  
+    private static Dictionary<int, MaterialBiblioteca>_materiais = new()
+    {
+        [1] = new Livro
+    {
+        Id = 1,
+        Titulo = "Clean Code",
+        AnoPublicacao = 2008,
+        Autor = "Robert C. Martin",
+        Paginas = 431
+    },
+    [2] = new Revista
+    {
+        Id = 2,
+        Titulo = "Revista de Tecnologia",
+        AnoPublicacao = 2026,
+        Edicao = 15,
+        MesPublicacao = 11
+    }
+    };  
 
     private int GerarNovoId()
     {
