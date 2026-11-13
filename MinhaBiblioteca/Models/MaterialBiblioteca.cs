@@ -1,3 +1,7 @@
+using System.Text.Json.Serialization;
+
+[JsonDerivedType(typeof(Livro), typeDiscriminator: "livro")]
+[JsonDerivedType(typeof(Revista), typeDiscriminator: "revista")]
 public abstract class MaterialBiblioteca
 {
 public int Id { get ; set;}
