@@ -10,7 +10,7 @@ public class Livro : MaterialBiblioteca, IEmprestimo
 
     public override string Descricao()
     {
-        return $" Titulo: {Titulo}, Id: {Id}, Ano de Publicação: {AnoPublicacao?.ToString() ?? "Não Informado"}, Autor: {Autor}, Páginas: {Paginas.ToString()}";
+            return $"Livro: {Titulo} - Autor: {Autor}";
     }
 
     public string Emprestar()

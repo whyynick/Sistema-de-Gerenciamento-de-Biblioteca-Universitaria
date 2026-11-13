@@ -22,7 +22,10 @@ public class MaterialRepository : IMaterialRepository
 
     private int GerarNovoId()
     {
-        return _materiais.Count + 1;
+        if (_materiais.Count == 0)
+            return 1;
+
+        return _materiais.Keys.Max() + 1;
     }
 
     public IEnumerable<MaterialBiblioteca> ObterTodos()
