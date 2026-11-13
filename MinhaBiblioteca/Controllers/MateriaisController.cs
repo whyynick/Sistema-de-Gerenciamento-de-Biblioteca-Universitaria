@@ -45,7 +45,7 @@ public IActionResult MostrarDescricao(int id)
     });
 }
 
-[HttpPost("Livro")]
+[HttpPost("livro")]
 public IActionResult CriarLivro([FromBody] Livro livro)
 {
     if (livro == null)
@@ -75,7 +75,7 @@ public IActionResult CriarLivro([FromBody] Livro livro)
 
     var livroCriado = _repository.Adicionar(livro);
 
-    return Created($"/api/Materiais/{livroCriado.Id}", livroCriado);
+    return CreatedAtAction(nameof(BuscarMaterial), new { id = livroCriado.Id }, livroCriado);
   
 }
 
