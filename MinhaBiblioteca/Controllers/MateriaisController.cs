@@ -82,7 +82,7 @@ public IActionResult CriarLivro([FromBody] Livro livro)
 [HttpPut("livro/{id}")]
 public IActionResult AtualizarLivro(int id, [FromBody] Livro livro)
 {
-if (livro == null)
+    if (livro == null)
     {
         return BadRequest("Dados do livro não informados.");
     }
