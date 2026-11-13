@@ -44,7 +44,24 @@ public IActionResult MostrarDescricao(int id)
         PrazoEmprestimo = material.CalcularPrazo()
     });
 }
+[HttpPost("Livro")]
+public IActionResult CriarLivro([FromBody] Livro livro)
+{
+    var criado = _repository.Adicionar(livro);
 
+    return CreatedAtAction(nameof(BuscarMaterial),new{id = criado.Id}, criado);
+}
+
+[HttpPut("livro/{id}")]
+public IActionResult AtualizarLivro(int id, [FromBody] Livro livro)
+{
+    bool atualizado = _repository.Atualizar(id, livro);
+
+    if(!atualizado)
+        return  NotFound();
+    
+    return Ok(livro);
+}
 
 [HttpPost("revista")]
 public IActionResult CriarRevista([FromBody] Revista revista)
