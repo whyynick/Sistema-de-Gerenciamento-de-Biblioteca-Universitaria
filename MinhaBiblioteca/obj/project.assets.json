@@ -457,24 +457,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pabao\\.nuget\\packages\\": {}
+    "/home/nick/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pabao\\Downloads\\Projetos\\P2\\programação orientada\\atividade ultima\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
+      "projectUniqueName": "/home/nick/code/Faculdade/POO/Sistema-de-Gerenciamento-de-Biblioteca-Universitaria/MinhaBiblioteca/MinhaBiblioteca.csproj",
       "projectName": "MinhaBiblioteca",
-      "projectPath": "C:\\Users\\pabao\\Downloads\\Projetos\\P2\\programação orientada\\atividade ultima\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\MinhaBiblioteca.csproj",
-      "packagesPath": "C:\\Users\\pabao\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pabao\\Downloads\\Projetos\\P2\\programação orientada\\atividade ultima\\Sistema-de-Gerenciamento-de-Biblioteca-Universitaria\\MinhaBiblioteca\\obj\\",
+      "projectPath": "/home/nick/code/Faculdade/POO/Sistema-de-Gerenciamento-de-Biblioteca-Universitaria/MinhaBiblioteca/MinhaBiblioteca.csproj",
+      "packagesPath": "/home/nick/.nuget/packages/",
+      "outputPath": "/home/nick/code/Faculdade/POO/Sistema-de-Gerenciamento-de-Biblioteca-Universitaria/MinhaBiblioteca/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pabao\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/nick/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -493,7 +494,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0": {
@@ -523,7 +524,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.112/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
