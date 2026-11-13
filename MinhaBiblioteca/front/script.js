@@ -1,0 +1,1 @@
+const API_URL = "http://localhost:5147/api/Materiais/"
