@@ -44,7 +44,7 @@ public IActionResult MostrarDescricao(int id)
         PrazoEmprestimo = material.CalcularPrazo()
     });
 }
-[HttpPost("Livro")]
+[HttpPost("livro")]
 public IActionResult CriarLivro([FromBody] Livro livro)
 {
     var criado = _repository.Adicionar(livro);
@@ -66,6 +66,19 @@ public IActionResult AtualizarLivro(int id, [FromBody] Livro livro)
 [HttpPost("revista")]
 public IActionResult CriarRevista([FromBody] Revista revista)
 {
+
+    if (string.IsNullOrWhiteSpace(revista.Titulo))
+    return BadRequest("O título da revista é obrigatório.");
+
+    if (revista.AnoPublicacao < 0)
+    return BadRequest("O ano de publicação não pode ser menor que 0.");
+
+    if (revista.Edicao <= 0)
+    return BadRequest("O número da edição deve ser maior que 0.");
+
+    if (revista.MesPublicacao < 1 || revista.MesPublicacao > 12)
+    return BadRequest("O mês de publicação deve estar entre 1 e 12.");
+
     var criado = _repository.Adicionar(revista);
 
     return CreatedAtAction(nameof(BuscarMaterial), new{ id = criado.Id}, criado);
@@ -90,6 +103,19 @@ public IActionResult Emprestar(int id)
 [HttpPut("revista/{id}")]
 public IActionResult AtualizarRevista(int id, [FromBody] Revista revista)
 {
+
+    if (string.IsNullOrWhiteSpace(revista.Titulo))
+    return BadRequest("O título da revista é obrigatório.");
+
+    if (revista.AnoPublicacao < 0)
+    return BadRequest("O ano de publicação não pode ser menor que 0.");
+
+    if (revista.Edicao <= 0)
+    return BadRequest("O número da edição deve ser maior que 0.");
+
+    if (revista.MesPublicacao < 1 || revista.MesPublicacao > 12)
+    return BadRequest("O mês de publicação deve estar entre 1 e 12.");
+    
     bool atualizado = _repository.Atualizar(id, revista);
 
     if(!atualizado)
