@@ -96,7 +96,7 @@ async function consultarDescricao(id) {
             return;
         }
 
-        const dados = await resposta.json
+        const dados = await resposta.json()
 
         alert(`
             Detalhes do Material:
@@ -126,6 +126,163 @@ async function realizarEmprestimo(id) {
     } catch (erro) {
         console.error("Erro ao emprestar:", erro);
         alert("Erro de conexão ao tentar emprestar.");
+    }
+}
+
+function fecharFormulario() {
+    const secao = document.querySelector("#secao-formulario");
+    secao.classList.add("d-none");
+    document.querySelector("#form-material").reset();
+    document.querySelector("#form-id").value = "";
+}
+
+function abrirFormularioNovo(tipo) {
+    document.querySelector("#form-material").reset();
+    document.querySelector("#form-id").value = "";
+    document.querySelector("#form-tipo").value = tipo;
+
+    const camposLivro = document.querySelector("#campos-livro");
+    const camposRevista = document.querySelector("#campos-revista");
+    const tituloForm = document.querySelector("#form-titulo");
+
+    if (tipo === "livro") {
+        tituloForm.textContent = "Cadastrar Livro";
+        camposLivro.classList.remove("d-none");
+        camposRevista.classList.add("d-none");
+    } else {
+        tituloForm.textContent = "Cadastrar Revista";
+        camposLivro.classList.add("d-none");
+        camposRevista.classList.remove("d-none");
+    }
+
+    document.querySelector("#secao-formulario").classList.remove("d-none");
+    document.querySelector("#secao-formulario").scrollIntoView({ behavior: "smooth" });
+}
+
+async function prepararEdicao(id) {
+    try {
+        const resposta = await fetch(`${API_URL}${id}`);
+        if (!resposta.ok) {
+            alert("Erro ao buscar dados do material para edição.");
+            return;
+        }
+
+        const material = await resposta.json();
+        const ehLivro = material.autor !== undefined;
+        const tipo = ehLivro ? "livro" : "revista";
+
+        document.querySelector("#form-id").value = material.id;
+        document.querySelector("#form-tipo").value = tipo;
+        document.querySelector("#campo-titulo").value = material.titulo;
+        document.querySelector("#campo-ano").value = material.anoPublicacao;
+
+        const camposLivro = document.querySelector("#campos-livro");
+        const camposRevista = document.querySelector("#campos-revista");
+        const tituloForm = document.querySelector("#form-titulo");
+
+        if (ehLivro) {
+            tituloForm.textContent = `Editar Livro #${material.id}`;
+            document.querySelector("#campo-autor").value = material.autor;
+            document.querySelector("#campo-paginas").value = material.paginas;
+            camposLivro.classList.remove("d-none");
+            camposRevista.classList.add("d-none");
+        } else {
+            tituloForm.textContent = `Editar Revista #${material.id}`;
+            document.querySelector("#campo-edicao").value = material.edicao;
+            document.querySelector("#campo-mes").value = material.mesPublicacao;
+            camposLivro.classList.add("d-none");
+            camposRevista.classList.remove("d-none");
+        }
+
+        document.querySelector("#secao-formulario").classList.remove("d-none");
+        document.querySelector("#secao-formulario").scrollIntoView({ behavior: "smooth" });
+
+    } catch (erro) {
+        console.error("Erro ao carregar edição:", erro);
+        alert("Erro de conexão ao buscar dados.");
+    }
+}
+
+async function salvarMaterial(event) {
+    event.preventDefault();
+
+    const id = document.querySelector("#form-id").value;
+    const tipo = document.querySelector("#form-tipo").value;
+    const titulo = document.querySelector("#campo-titulo").value.trim();
+    const ano = parseInt(document.querySelector("#campo-ano").value);
+
+    if (!titulo) {
+        alert("O título é obrigatório.");
+        return;
+    }
+    if (ano < 0) {
+        alert("Ano de publicação inválido.");
+        return;
+    }
+
+    let dados = {
+        titulo: titulo,
+        anoPublicacao: ano
+    };
+
+    let url = "";
+    let metodo = id ? "PUT" : "POST";
+
+    if (tipo === "livro") {
+        const autor = document.querySelector("#campo-autor").value.trim();
+        const paginas = parseInt(document.querySelector("#campo-paginas").value);
+
+        if (!autor) {
+            alert("O autor do livro é obrigatório.");
+            return;
+        }
+        if (paginas <= 0 || isNaN(paginas)) {
+            alert("Número de páginas deve ser maior que 0.");
+            return;
+        }
+
+        dados.autor = autor;
+        dados.paginas = paginas;
+        url = id ? `${API_URL}livro/${id}` : `${API_URL}livro`;
+
+    } else {
+        const edicao = parseInt(document.querySelector("#campo-edicao").value);
+        const mes = parseInt(document.querySelector("#campo-mes").value);
+
+        if (edicao <= 0 || isNaN(edicao)) {
+            alert("Número da edição deve ser maior que 0.");
+            return;
+        }
+        if (mes < 1 || mes > 12 || isNaN(mes)) {
+            alert("O mês deve ser entre 1 e 12.");
+            return;
+        }
+
+        dados.edicao = edicao;
+        dados.mesPublicacao = mes;
+        url = id ? `${API_URL}revista/${id}` : `${API_URL}revista`;
+    }
+
+    try {
+        const resposta = await fetch(url, {
+            method: metodo,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dados)
+        });
+
+        if (resposta.ok) {
+            alert(id ? "Material atualizado com sucesso!" : "Material cadastrado com sucesso!");
+            fecharFormulario();
+            carregarMateriais();
+        } else {
+            const erroMsg = await resposta.text();
+            alert("Erro da API: " + erroMsg);
+        }
+    } catch (erro) {
+        console.error("Erro ao salvar:", erro);
+        alert("Erro de conexão ao tentar salvar o material.");
     }
 }
 
